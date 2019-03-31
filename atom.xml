@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ahaohe.github.io/"/>
-  <updated>2019-03-31T13:42:28.050Z</updated>
+  <updated>2019-03-31T16:14:01.904Z</updated>
   <id>http://ahaohe.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本博客美化所使用的插件和修改步骤</title>
+    <link href="http://ahaohe.github.io/posts/blog-meihua.html"/>
+    <id>http://ahaohe.github.io/posts/blog-meihua.html</id>
+    <published>2019-03-31T16:06:55.000Z</published>
+    <updated>2019-03-31T16:14:01.904Z</updated>
+    
+    <content type="html"><![CDATA[<p>稍后再说</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;稍后再说&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://ahaohe.github.io/categories/Blog/"/>
+    
+    
+      <category term="Hexo" scheme="http://ahaohe.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客搭建时遇到的一些问题和解决方案</title>

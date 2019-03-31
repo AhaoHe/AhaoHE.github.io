@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[本博客美化所使用的插件和修改步骤]]></title>
+    <url>%2Fposts%2Fblog-meihua.html</url>
+    <content type="text"><![CDATA[稍后再说]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo博客搭建时遇到的一些问题和解决方案]]></title>
     <url>%2Fposts%2Fhexo-problem.html</url>
     <content type="text"><![CDATA[测试]]></content>
