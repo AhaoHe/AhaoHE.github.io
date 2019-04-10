@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://ahh666.com/images/wechatpay.jpg">
 <meta property="og:image" content="https://ahh666.com/images/alipay.jpg">
 <meta property="og:image" content="https://ahh666.com/images/wechatzs.png">
-<meta property="og:updated_time" content="2019-04-10T14:17:30.457Z">
+<meta property="og:updated_time" content="2019-04-10T14:55:44.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="我喜欢站在巨人的肩膀上，因此我也乐于分享自己所知道的。科技的快速发展就在于知识的传播。虽然我不是巨人，也怕误人子弟，但这并不妨碍我记录自己的学习。  关于我emmm…… 联系方式mail： ahaohe@foxmail.com  Wechat/微信:&amp;emsp;    点击查看                          扫一扫！添加好友！QR code         Github：Gi">
@@ -353,6 +353,9 @@
 <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><div>mail： <a href="mailto:ahaohe@foxmail.com" target="_blank" rel="noopener"><font color="#4169E1">ahaohe@foxmail.com</font></a>  <br>Wechat/微信:&emsp;<button id="wechatButton" disable="enable" onclick="var qr = document.getElementById('wechat_QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">    <span>点击查看</span>  </button>  <div id="wechat_QR" style="display: none; text-align: center;">      <div id="wechat" style="display: inline-block">        <img id="wechat_qr" src="/images/mywechat.jpg" alt="阿豪 微信">        <p>扫一扫！添加好友！QR code</p>      </div>   </div><br>Github：<a href="https://github.com/AhaoHe/" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a></div><br><font color="Gray">如果不想暴露隐私但想提点建议，可以点击右边蓝色聊天窗口，和我匿名联系。</font><br><br><div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">  <button id="zsButton" disable="enable" onclick="var qr = document.getElementById('zs_QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">    <span>赞赏</span>  </button>  <div id="zs_QR" style="display: none;"> <div>感谢您的支持！Thank you！</div>    <div id="wechat" style="display: inline-block">        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="阿豪 微信支付">        <p>微信支付</p>      </div>      <div id="alipay" style="display: inline-block">        <img id="alipay_qr" src="/images/alipay.jpg" alt="阿豪 支付宝">        <p>支付宝</p>      </div>      <div id="alipay" style="display: inline-block">        <img id="alipay_qr" src="/images/wechatzs.png" alt="阿豪 微信赞赏">        <p>微信赞赏</p>      </div> </div></div>
 
 <html><br><head><meta name="generator" content="Hexo 3.8.0"><br>    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"><br>    <script type="text/javascript" src="js/cos-js-sdk-v5.js"></script><br>    <script type="text/javascript"><br>        //获取当前时间的字符串<br>        function GetTimeString() {<br>            var date = new Date();<br>            var yy = date.getFullYear().toString();<br>            var mm = (date.getMonth() + 1).toString();<br>            var dd = date.getDate().toString();<br>            var hh = date.getHours().toString();<br>            var nn = date.getMinutes().toString();<br>            var ss = date.getSeconds().toString();<br>            var mi = date.getMilliseconds().toString();<br><br>            var ret = yy + mm + dd + hh + nn + ss + mi;<br>            return ret;<br>        }<br>        //实例化COS对象<br>        var cos = new COS({<br>            SecretId: ‘’, //密钥id<br>            SecretKey: ‘’//密钥的key<br>        });<br>        //点击上传按钮上传文件到腾讯云<br>        function uploadCos() {<br>            var file = document.getElementById(‘videoFile’).files[0];<br>            cos.putObject({<br>                Bucket: ‘bucket-12345678’, // 桶名-APPID  必须<br>                Region: ‘ap-beijing’, //区域 必须<br>                Key: GetTimeString() + ‘.mp4’, //文件名必须<br>                StorageClass: ‘STANDARD’,<br>                Body: file, // 上传文件对象<br>                onProgress: function (progressData) {<br>                    console.log(JSON.stringify(progressData));//上传成功的返回值<br>                }<br>            }, function (err, data) {<br>                console.log(err || data);//上传失败的返回值<br>            });<br><br>        }<br>    </script><br></head><br><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><br>请选择文件:<input type="file" id="videoFile" value><br><input type="button" value="上传" onclick="uploadCos()"><br></body><br></html>
+
+<hr>
+<h1 id="留言区"><a href="#留言区" class="headerlink" title="留言区"></a><center>留言区</center></h1>
 		<div>
 	  		
 	    	<!-- Link Gitalk 的支持文件  -->
@@ -544,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联系方式"><span class="nav-number">2.</span> <span class="nav-text">联系方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联系方式"><span class="nav-number">2.</span> <span class="nav-text">联系方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#留言区"><span class="nav-number">3.</span> <span class="nav-text">留言区</span></a></li></ol></div>
             
 
           </div>
