@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="Blog, Java, HTML, MySQL, Python, Git">
+  <meta name="keywords" content="Git,">
 
 
 
@@ -110,17 +110,28 @@
 
 
 
-<meta name="description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="温故而知新">
-<meta property="og:url" content="https://ahh666.com/h5/mota/README.html">
+<meta name="description" content="承接上回 Git基础操作（一） 的讲解。本篇主要讲解仓库的管理，以及成员如何合作开发。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基础用法(二)">
+<meta property="og:url" content="https://ahh666.com/posts/git_base_2.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
+<meta property="og:description" content="承接上回 Git基础操作（一） 的讲解。本篇主要讲解仓库的管理，以及成员如何合作开发。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-06-18T01:18:59.000Z">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee2.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git7.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git8.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git8-2.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-1.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-2.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-3.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-4.png">
+<meta property="og:updated_time" content="2019-04-11T16:03:25.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="温故而知新">
-<meta name="twitter:description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
+<meta name="twitter:title" content="Git基础用法(二)">
+<meta name="twitter:description" content="承接上回 Git基础操作（一） 的讲解。本篇主要讲解仓库的管理，以及成员如何合作开发。">
+<meta name="twitter:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee2.png">
 
 
 
@@ -150,13 +161,13 @@
 
 
 
-  <link rel="canonical" href="https://ahh666.com/h5/mota/README.html">
+  <link rel="canonical" href="https://ahh666.com/posts/git_base_2.html">
 
 
 
 
 
-  <title> | 温故而知新</title>
+  <title>Git基础用法(二) | 温故而知新</title>
   
 
 
@@ -322,38 +333,354 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ahh666.com/posts/git_base_2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿豪">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温故而知新">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>#Mota<br>����˵����<br>��Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)<br>�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧��</p>
-<p>�򿪷�ʽ��<br>���ڷ�������ʱ�������豸����ֱ��ͨ����ַ����<br>���Ա��ؿ��Ϸ�index.html����������л��Ҽ�ѡ���������<br>�ֻ����ؿ��ҵ�index.html������·��Ȼ������������ʸñ����ļ�����</p>
-<p>������˵����<br>IE�������֧�ֻ�֧��Ч������<br>�ٶ��ֻ���������ֻ��Դ��Ĳ��������֧�ֲ���<br>���Խ�����Chrome����Firefox�������<br>�ֻ� Android������UC��Chrome������򿪣�IOS������Safari��Chrome��<br>*��ʿ�߶�������NPC�Ի�������Ϊ�����ԽϺ�</p>
-<p>�ļ�˵����<br>��Դ�ļ�����Res�ļ�����<br>Core.js�Ǻ����ļ�������������Դ�ļ��غ���Ϸ�����п���<br>Layout.css�ǿ��Ʋ��ֵ���ʽ���ļ�<br>Res�ļ����е�js�ļ���������Դ��һ���֣��������˵�ͼ���ݣ��������ݵ�</p>
-<p>��������쳣��ˢ������</p>
-
+          <h1 class="post-title" itemprop="name headline">Git基础用法(二)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T22:47:22+08:00">
+                2019-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/posts/git_base_2.html" class="leancloud_visitors" data-flag-title="Git基础用法(二)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				<span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  955
+                </span>
+				<span>字</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+				<span>分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote>
+<p>承接上回 <a href="/posts/git_base.html">Git基础操作（一）</a> 的讲解。本篇主要讲解仓库的管理，以及成员如何合作开发。</p>
+</blockquote>
+<a id="more"></a>
+<center><font size="6"><b>Git常用操作</b></font></center>
+
+<h2 id="查看git所有的配置清单"><a href="#查看git所有的配置清单" class="headerlink" title="查看git所有的配置清单"></a>查看git所有的配置清单</h2><p><code>git config --list</code></p>
+<p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee2.png" alt="git"></p>
+<h2 id="从远处仓库中克隆代码"><a href="#从远处仓库中克隆代码" class="headerlink" title="从远处仓库中克隆代码"></a>从远处仓库中克隆代码</h2><p><code>git clone https://gitee.com/simoniublog/cardemo.git</code></p>
+<p>Git支持多种协议，包括<code>https</code>，但通过<code>ssh</code>支持的原生<code>git</code>协议速度最快。</p>
+<p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git7.png" alt="git"></p>
+<h2 id="把文件添加到版本库，并提交。"><a href="#把文件添加到版本库，并提交。" class="headerlink" title="把文件添加到版本库，并提交。"></a>把文件添加到版本库，并提交。</h2><p>添加文件到Git仓库，分两步：</p>
+<ol>
+<li>使用命令<code>git add &lt;file&gt;</code>，注意，可反复多次使用，添加多个文件；<code>&lt;file&gt;</code>为文件名.后缀。</li>
+<li>使用命令<code>git commit -m &lt;message&gt;</code>，提交完成。<br>可以看<a href="/posts/git_base">Git基础操作（一）</a>了解具体。</li>
+</ol>
+<h2 id="从本地仓库中删除并恢复"><a href="#从本地仓库中删除并恢复" class="headerlink" title="从本地仓库中删除并恢复"></a>从本地仓库中删除并恢复</h2><ol>
+<li>使用命令<code>git rm &lt;file&gt;</code>或者<code>git rm -rf &lt;dir&gt;</code>，注意，<code>rm</code>只能删除文件<code>rm -rf</code>删除文件夹；</li>
+<li>使用命令<code>git status</code>，查看本地仓库和远程仓库的差异；</li>
+<li>使用命令<code>git reset HEAD</code>，恢复删除；</li>
+<li>使用命令<code>git checkout</code>，将暂存区文件拉回到本地；</li>
+</ol>
+<p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git8.png" alt="git"></p>
+<p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git8-2.png" alt="git"> </p>
+<h2 id="添加仓库开发成员"><a href="#添加仓库开发成员" class="headerlink" title="添加仓库开发成员"></a>添加仓库开发成员</h2><p>暂无</p>
+<h2 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h2><p>不同分支就相当于两个互不干扰的小仓库。</p>
+<ol>
+<li>使用命令<code>git branch</code>，查看当前分支；</li>
+<li>使用命令<code>git checkout -b dev</code>，创建并切换分支；</li>
+<li>使用<code>git commit -m</code>，<code>git push origin dev</code>提交分支。</li>
+<li>使用命令<code>git merge dev</code>，合并分支。</li>
+<li>使用<code>git branch -d dev</code>，删除分支。注意：删除的是本地分支。</li>
+<li>使用<code>git push origin --delete dev</code>，删除远程分支。</li>
+</ol>
+<hr>
+<ol>
+<li>使用命令<code>git branch</code>，查看当前分支； </li>
+<li>使用命令<code>git checkout -b dev</code>，创建并切换分支；<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9.png" alt="git">  </li>
+<li>使用<code>git commit -m</code>，<code>git push origin dev</code>提交分支。<br>//第一张图没提交信息是错误示范，正确：<code>git commit -m &lt;message&gt;</code><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-1.png" alt="git"><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-2.png" alt="git">  </li>
+<li>使用命令<code>git merge dev</code>，合并分支。<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-3.png" alt="git">  </li>
+<li>使用<code>git branch -d dev</code>，删除分支。注意：删除的是本地分支。</li>
+<li>使用<code>git push origin --delete dev</code>，删除远程分支。<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git9-4.png" alt="git"></li>
+</ol>
+<h2 id="多人协作。"><a href="#多人协作。" class="headerlink" title="多人协作。"></a>多人协作。</h2><p>创建了分支后，并不一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
+<p>Git常见的分支命名有以下四种，每种都具有特殊的含义：</p>
+<ol>
+<li><code>master</code>分支是主分支，因此要时刻与远程同步；</li>
+<li><code>dev</code>分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
+<li><code>bug</code>分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
+<li><code>feature</code>分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
+</ol>
+<p><em>总之，就是在Git中，分支完全可以在本地自己藏着玩，是否推送，视你的心情而定！</em><br><strong>因此，多人协作的工作模式通常是这样：</strong></p>
+<ol>
+<li>首先，可以试图用<code>git push origin &lt;branch-name&gt;</code>推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新快，需要先用<code>git pull</code>试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用<code>git push origin &lt;branch-name&gt;</code>推送就能成功！</li>
+<li>如果<code>git pull</code>提示<code>no tracking information</code>，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream-to &lt;branch-name&gt; origin/&lt;branch-name&gt;</code>。</li>
+</ol>
+<p>这就是多人协作的工作模式，一旦熟悉了，就非常简单。</p>
+<h2 id="深刻理解origin的含义"><a href="#深刻理解origin的含义" class="headerlink" title="深刻理解origin的含义"></a>深刻理解origin的含义</h2><p>暂无</p>
+<h2 id="Git-fork使用"><a href="#Git-fork使用" class="headerlink" title="Git fork使用"></a>Git fork使用</h2><p>使用 <code>git remote -v</code> 查看远程状态。</p>
+<p><strong>添加一个将被同步给 fork 远程的上游仓库A</strong> 。</p>
+<p><code>git remote add upstream https://gitee.com/simoniublog/cardemo.git</code></p>
+<p><code>git fetch upstream</code>,默认会将远程所有的分支<code>fetch</code>下来</p>
+
       
     </div>
     
     
     
+	<div>
+  		
+    	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+  		
+	</div>
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/posts/git_base_2.html">Git基础用法(二)</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
+  <p><span>发布时间:</span>2019年04月11日 - 22:47</p>
+  <p><span>最后更新:</span>2019年04月12日 - 00:03</p>
+  <p><span>原始链接:</span><a href="/posts/git_base_2.html" title="Git基础用法(二)">https://ahh666.com/posts/git_base_2.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/git_base_2.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/word-to-markdown.html" rel="next" title="Word转Markdown的方法">
+                <i class="fa fa-chevron-left"></i> Word转Markdown的方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+	<div>
+  		
+    	<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '7398bf08ebe06319f2b8',
+        clientSecret: '8192ee342b5908a057f748706031e0cf727ef13f',
+        repo: 'AhaoHe.github.io',
+        owner: 'AhaoHe',
+        admin: ['AhaoHe'],
+        id: location.pathname,
+		distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->
+
+  		
+	</div>
+
+
+
+    <div class="post-spread">
+      
+        
+
+
+
+
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"93"},"image":{"viewList":["qzone","tsina","weixin","tieba","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tieba","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://ahaohe.github.io//static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://ahaohe.github.io//static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+      
+    </div>
   </div>
 
 
@@ -386,8 +713,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,6 +829,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看git所有的配置清单"><span class="nav-number">1.</span> <span class="nav-text">查看git所有的配置清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远处仓库中克隆代码"><span class="nav-number">2.</span> <span class="nav-text">从远处仓库中克隆代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把文件添加到版本库，并提交。"><span class="nav-number">3.</span> <span class="nav-text">把文件添加到版本库，并提交。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从本地仓库中删除并恢复"><span class="nav-number">4.</span> <span class="nav-text">从本地仓库中删除并恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加仓库开发成员"><span class="nav-number">5.</span> <span class="nav-text">添加仓库开发成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和合并分支"><span class="nav-number">6.</span> <span class="nav-text">创建和合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多人协作。"><span class="nav-number">7.</span> <span class="nav-text">多人协作。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深刻理解origin的含义"><span class="nav-number">8.</span> <span class="nav-text">深刻理解origin的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-fork使用"><span class="nav-number">9.</span> <span class="nav-text">Git fork使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
