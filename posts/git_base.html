@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee.PNG">
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee1.PNG">
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git5.png">
-<meta property="og:updated_time" content="2019-04-11T16:06:18.918Z">
+<meta property="og:updated_time" content="2019-04-11T16:44:17.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基础用法(一)">
 <meta name="twitter:description" content="Git(读音为/gɪt/。)是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。本文章以Git+码云为例。本篇主要将如何进行初步设置，可以完成普通的提交至仓库。点击查看Git基础用法（二）">
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  831
+                  832
                 </span>
 				<span>字</span>
               
@@ -497,7 +497,7 @@
 <h2 id="注册码云账号"><a href="#注册码云账号" class="headerlink" title="注册码云账号"></a>注册码云账号</h2><p><a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></p>
 <h2 id="登录码云创建项目"><a href="#登录码云创建项目" class="headerlink" title="登录码云创建项目"></a>登录码云创建项目</h2><p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/mayun1.jpg" alt="第一步">  </p>
 <p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/mayun2.jpg" alt="第二步"></p>
-<h2 id="设置码云公钥"><a href="#设置码云公钥" class="headerlink" title="设置码云公钥"></a>设置码云公钥</h2><p>在随意的文件夹中右键出现如下图<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git1.PNG" alt="Git"></p>
+<h2 id="1-设置码云公钥"><a href="#1-设置码云公钥" class="headerlink" title="1.设置码云公钥"></a>1.设置码云公钥</h2><p>在随意的文件夹中右键出现如下图<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git1.PNG" alt="Git"></p>
 <p>接下来的操作都是通过Git Bash Here。<br>Git GUI是可视化操作，没了解过。就不深究了。<br>接下来都是在如下界面输入内容！<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git2.PNG" alt="Git"></p>
 <p>步骤：  </p>
 <h3 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h3><p>输入<code>ssh-keygen -t rsa -C &quot;你的邮箱@xxx.com&quot;</code></p>
@@ -506,25 +506,25 @@
 <h3 id="找到公钥，复制公钥"><a href="#找到公钥，复制公钥" class="headerlink" title="找到公钥，复制公钥"></a>找到公钥，复制公钥</h3><p>输入<code>cat ~/.ssh/id\_rsa.pub</code>  或者在<code>C:\Users\Lenovo\.ssh中找到id_rsa.pub文件（用文本文件打开）</code></p>
 <p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/shh.PNG" alt="shh"><br>出现公钥（因为重要性，我就不展示了）。<br><strong>查看公钥（记住千万不要把私钥文件 id_rsa 透露给任何人）</strong><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git6.PNG" alt="shh">  </p>
 <p>将公钥内容（全部）复制并粘贴（<strong>注意：公钥内容以ssh-rsa开头</strong>）</p>
-<h3 id="3-初始化本地项目"><a href="#3-初始化本地项目" class="headerlink" title="3.初始化本地项目"></a>3.初始化本地项目</h3><p>设置git全局账号，目的是告诉 git 你是谁，你输入的信息将出现在你创建的提交中。<strong>你的名字或昵称就是如下图所示地方的内容。</strong> Github类似，也是在域名中可以找到用户名。<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee.PNG" alt="gitee"></p>
+<h2 id="2-初始化本地项目"><a href="#2-初始化本地项目" class="headerlink" title="2.初始化本地项目"></a>2.初始化本地项目</h2><p>设置git全局账号，目的是告诉 git 你是谁，你输入的信息将出现在你创建的提交中。<strong>你的名字或昵称就是如下图所示地方的内容。</strong> Github类似，也是在域名中可以找到用户名。<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee.PNG" alt="gitee"></p>
 <p><code>git config --global user.name 你的名字或昵称;</code></p>
 <p><code>git config --global user.email 你的邮箱;</code></p>
 <p><strong>如果出现：error: cannot overwrite multiple values with a single value</strong><br>使用如下命令：  </p>
 <p><code>git config --global --replace-all user.email 输入你的邮箱</code></p>
 <p><code>git config --global --replace-all user.name 输入你的用户名</code></p>
-<h3 id="4-在你的需要初始化版本库的文件夹中执行："><a href="#4-在你的需要初始化版本库的文件夹中执行：" class="headerlink" title="4.在你的需要初始化版本库的文件夹中执行："></a>4.在你的需要初始化版本库的文件夹中执行：</h3><p>比如我要建博客，我在自己的F盘中建了个blog文件夹。<br>在F:\blog中右键打开git bash。</p>
+<h2 id="3-在你的需要初始化版本库的文件夹中执行："><a href="#3-在你的需要初始化版本库的文件夹中执行：" class="headerlink" title="3.在你的需要初始化版本库的文件夹中执行："></a>3.在你的需要初始化版本库的文件夹中执行：</h2><p>比如我要建博客，我在自己的F盘中建了个blog文件夹。<br>在F:\blog中右键打开git bash。</p>
 <p><code>git init</code></p>
 <p><code>git remote add origin &lt;你的项目地址&gt;</code></p>
 <p>//注:项目地址形式为:<a href="https://gitee.com/xxx/xxx.git或者" target="_blank" rel="noopener">https://gitee.com/xxx/xxx.git或者</a> <a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a>:xxx/xxx.git<br>在进入仓库后右端如下地方可以找到<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/gitee1.PNG" alt="gitee"></p>
 <p>例子：<code>git remote add origin git@gitee.com:yyss18/yyss.git</code></p>
-<h3 id="5-完成第一次提交"><a href="#5-完成第一次提交" class="headerlink" title="5.完成第一次提交"></a>5.完成第一次提交</h3><ol>
+<h2 id="4-完成第一次提交"><a href="#4-完成第一次提交" class="headerlink" title="4.完成第一次提交"></a>4.完成第一次提交</h2><ol>
 <li><code>git pull origin master &lt;这里需要修改/添加文件，否则与原文件相比就没有变动&gt;</code></li>
 <li><code>git add .</code>   //添加当前目录的全部内容</li>
 <li><code>git commit -m &quot;第一次提交&quot;</code><br>补充：<code>git commit -m &lt;message&gt;</code>中<code>&lt;message&gt;</code>为每次提交所备注的内容。</li>
 <li><code>git push origin master</code></li>
 </ol>
 <p>示例：<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/git/git5.png" alt="gitee"></p>
-<h3 id="6-更新提交项目"><a href="#6-更新提交项目" class="headerlink" title="6.更新提交项目"></a>6.更新提交项目</h3><ol>
+<h2 id="5-更新提交项目"><a href="#5-更新提交项目" class="headerlink" title="5.更新提交项目"></a>5.更新提交项目</h2><ol>
 <li>cd 文件夹路径</li>
 <li><code>git add .</code></li>
 <li><code>git commit -m &quot;这里输入更新的提示内容&quot;</code></li>
@@ -558,7 +558,7 @@
   <p><span>本文标题:</span><a href="/posts/git_base.html">Git基础用法(一)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
   <p><span>发布时间:</span>2019年04月11日 - 17:58</p>
-  <p><span>最后更新:</span>2019年04月12日 - 00:06</p>
+  <p><span>最后更新:</span>2019年04月12日 - 00:44</p>
   <p><span>原始链接:</span><a href="/posts/git_base.html" title="Git基础用法(一)">https://ahh666.com/posts/git_base.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/git_base.html" aria-label="复制成功！"></i></span>
   </p>
@@ -728,7 +728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -827,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git下载安装"><span class="nav-number">1.</span> <span class="nav-text">Git下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用码云-GitHub发布和更新项目"><span class="nav-number">2.</span> <span class="nav-text">如何使用码云/GitHub发布和更新项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册码云账号"><span class="nav-number">2.1.</span> <span class="nav-text">注册码云账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录码云创建项目"><span class="nav-number">2.2.</span> <span class="nav-text">登录码云创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置码云公钥"><span class="nav-number">2.3.</span> <span class="nav-text">设置码云公钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成公钥"><span class="nav-number">2.3.1.</span> <span class="nav-text">生成公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到公钥，复制公钥"><span class="nav-number">2.3.2.</span> <span class="nav-text">找到公钥，复制公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-初始化本地项目"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.初始化本地项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在你的需要初始化版本库的文件夹中执行："><span class="nav-number">2.3.4.</span> <span class="nav-text">4.在你的需要初始化版本库的文件夹中执行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-完成第一次提交"><span class="nav-number">2.3.5.</span> <span class="nav-text">5.完成第一次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-更新提交项目"><span class="nav-number">2.3.6.</span> <span class="nav-text">6.更新提交项目</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git下载安装"><span class="nav-number">1.</span> <span class="nav-text">Git下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用码云-GitHub发布和更新项目"><span class="nav-number">2.</span> <span class="nav-text">如何使用码云/GitHub发布和更新项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册码云账号"><span class="nav-number">2.1.</span> <span class="nav-text">注册码云账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录码云创建项目"><span class="nav-number">2.2.</span> <span class="nav-text">登录码云创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-设置码云公钥"><span class="nav-number">2.3.</span> <span class="nav-text">1.设置码云公钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成公钥"><span class="nav-number">2.3.1.</span> <span class="nav-text">生成公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到公钥，复制公钥"><span class="nav-number">2.3.2.</span> <span class="nav-text">找到公钥，复制公钥</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-初始化本地项目"><span class="nav-number">2.4.</span> <span class="nav-text">2.初始化本地项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-在你的需要初始化版本库的文件夹中执行："><span class="nav-number">2.5.</span> <span class="nav-text">3.在你的需要初始化版本库的文件夹中执行：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-完成第一次提交"><span class="nav-number">2.6.</span> <span class="nav-text">4.完成第一次提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-更新提交项目"><span class="nav-number">2.7.</span> <span class="nav-text">5.更新提交项目</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -883,7 +883,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.5k字</span>
+  <span class="post-count">博客全站共11k字</span>
 </div>
 
 
