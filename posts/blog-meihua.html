@@ -110,18 +110,20 @@
 
 
 
-<meta name="description" content="稍后再说">
+<meta name="description" content="记录自己在美化博客中修改的地方，基本上都是参考其他人。也有很多别人的原文。Next主题官方文档：点击查看     首页指定文章隐藏 首页显示标签 鼠标点击出现变化的文字效果 指定页面侧栏不显示文章目录 阅读热度排行">
 <meta name="keywords" content="Hexo,Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="本博客美化所使用的插件和修改步骤">
 <meta property="og:url" content="https://ahh666.com/posts/blog-meihua.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="稍后再说">
+<meta property="og:description" content="记录自己在美化博客中修改的地方，基本上都是参考其他人。也有很多别人的原文。Next主题官方文档：点击查看     首页指定文章隐藏 首页显示标签 鼠标点击出现变化的文字效果 指定页面侧栏不显示文章目录 阅读热度排行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T17:08:28.205Z">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/about.PNG">
+<meta property="og:updated_time" content="2019-04-12T07:55:41.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本博客美化所使用的插件和修改步骤">
-<meta name="twitter:description" content="稍后再说">
+<meta name="twitter:description" content="记录自己在美化博客中修改的地方，基本上都是参考其他人。也有很多别人的原文。Next主题官方文档：点击查看     首页指定文章隐藏 首页显示标签 鼠标点击出现变化的文字效果 指定页面侧栏不显示文章目录 阅读热度排行">
+<meta name="twitter:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/about.PNG">
 
 
 
@@ -432,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4
+                  2.5k
                 </span>
 				<span>字</span>
               
@@ -449,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  11
                 </span>
 				<span>分钟</span>
               
@@ -471,7 +473,126 @@
       
 
       
-        <p>稍后再说</p>
+        <blockquote>
+<p>记录自己在美化博客中修改的地方，基本上都是参考其他人。也有很多别人的原文。<br>Next主题官方文档：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">点击查看</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="#syxs_wz">首页指定文章隐藏</a></th>
+<th style="text-align:center"><a href="#syxs_bq">首页显示标签</a></th>
+<th style="text-align:center"><a href="#sbdj">鼠标点击出现变化的文字效果</a></th>
+<th style="text-align:center"><a href="#about">指定页面侧栏不显示文章目录</a></th>
+<th style="text-align:center"><a href="#ydrd">阅读热度排行</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<hr>
+<h1 id="1-有点忙，以后再说"><a href="#1-有点忙，以后再说" class="headerlink" title="1.有点忙，以后再说"></a><span id="ydm">1.有点忙，以后再说</span></h1><p>5555</p>
+<hr>
+<h1 id="2-首页指定文章隐藏"><a href="#2-首页指定文章隐藏" class="headerlink" title="2.首页指定文章隐藏"></a><span id="syxs_wz">2.首页指定文章隐藏</span></h1><ol>
+<li><a href="#syxs_wz">首页文章隐藏</a>参考淡之梦的<a href="https://blog.csdn.net/m0_37323771/article/details/80672271" target="_blank" rel="noopener">【Hexo】 设置首页隐藏指定文章</a></li>
+<li><a href="#syxs_bq">首页显示标签(原创)</a>  </li>
+</ol>
+<p>首页文章隐藏和显示标签基本上是一个地方改的，而且如果2个功能都添加，修改上还会相互关联，所以2个都会提到。</p>
+<p><strong><big>Step1: 基础设置</big></strong>  </p>
+<p>在指定文章中自定义添加一个notshow参数，值为true，用来提供判断</p>
+<pre><code>---
+title: 标题党
+date: 
+tags:
+categories:
+notshow: true  //这里哟
+---
+</code></pre><p>觉得每次都要添加麻烦的可以在<code>\scaffolds\post.md</code>中直接修改成</p>
+<pre><code>---
+title: {{ title }}
+date: {{ date }}
+categories: 
+tags: 
+notshow: 是否在首页显示，为空显示，true为不显示
+---
+</code></pre><p><strong><big>Step2: 修改主题的index.swig</big></strong>  </p>
+<p>主题可能各不一样，但原理都是一样的，我拿我使用的next主题来示范。<br>路径：<code>\themes\next\layout\index.swig</code><br>找到以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">        &#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% include &apos;_partials/pagination.swig&apos; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>用if语句判断notshow是否为true，为true则不显示；其余则显示。<br>改为：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">		&lt;!-- 在这里判断首页隐藏是否为true  --&gt;</span><br><span class="line">        &#123;% if post.notshow != true %&#125;</span><br><span class="line">            &#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">        &#123;% endif %&#125;</span><br><span class="line">		&lt;!-- 判断结束  --&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% include &apos;_partials/pagination.swig&apos; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-首页显示标签"><a href="#3-首页显示标签" class="headerlink" title="3.首页显示标签"></a><span id="syxs_bq">3.首页显示标签</span></h1><ol>
+<li><a href="#syxs_wz">首页文章隐藏</a>参考淡之梦的<a href="https://blog.csdn.net/m0_37323771/article/details/80672271" target="_blank" rel="noopener">【Hexo】 设置首页隐藏指定文章</a></li>
+<li><a href="#syxs_bq">首页显示标签(原创)</a>  </li>
+</ol>
+<p>其他主题我不知道，但next主题Mist样式首页文章底下不显示标签，我个人喜欢首页文章下面也可以看到标签。Next其他样式可能还是没有标签好看。  </p>
+<p>因为文章首页隐藏的notshow会影响到首页显示标签,所以写在首页隐藏的后面。</p>
+<p><strong><big>Step1: 修改主题的index.swig</big></strong>  </p>
+<p>主题可能各不一样，但原理都是一样的，我拿我使用的next主题来示范。<br>路径：<code>\themes\next\layout\index.swig</code><br>找到以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">        &#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% include &apos;_partials/pagination.swig&apos; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>通过文章的for循环，判断每个文章有没有标签，如果有就显示在首页。<br>改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">		&#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">		&lt;!-- 首页显示标签  --&gt;</span><br><span class="line">	    &#123;% if post.tags and post.tags.length %&#125;</span><br><span class="line">	      &lt;div class=&quot;post-tags&quot;&gt;</span><br><span class="line">	        &#123;% for tag in post.tags %&#125;</span><br><span class="line">	            &lt;a href=&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot; rel=&quot;tag&quot;&gt;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</span><br><span class="line">	        &#123;% endfor %&#125;</span><br><span class="line">	      &lt;/div&gt;</span><br><span class="line">	    &#123;% endif %&#125;</span><br><span class="line">		&lt;!-- 首页显示标签 end --&gt;</span><br><span class="line">   &#123;% endfor %&#125;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% include &apos;_partials/pagination.swig&apos; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>以下是给小白讲的</strong>，如果使用了<strong>首页隐藏</strong>，则首页隐藏的if语句要把标签的if语句给包含进去,否则文章消失了标签还在。大致修改成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">		&lt;!-- 在这里判断首页隐藏是否为true  --&gt;</span><br><span class="line">		&#123;% if post.notshow != true %&#125;</span><br><span class="line">          &#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">		  &lt;!-- 首页显示标签  --&gt;</span><br><span class="line">	      &#123;% if post.tags and post.tags.length %&#125;</span><br><span class="line">	        &lt;div class=&quot;post-tags&quot;&gt;</span><br><span class="line">	          &#123;% for tag in post.tags %&#125;</span><br><span class="line">	            &lt;a href=&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot; rel=&quot;tag&quot;&gt;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</span><br><span class="line">	          &#123;% endfor %&#125;</span><br><span class="line">	        &lt;/div&gt;</span><br><span class="line">	      &#123;% endif %&#125;</span><br><span class="line">		  &lt;!-- 首页显示标签 end --&gt;</span><br><span class="line">		&#123;% endif %&#125;</span><br><span class="line">		&lt;!-- 所有判断结束  --&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% include &apos;_partials/pagination.swig&apos; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><big>Step2: 修改CSS</big></strong> </p>
+<p>此时你可能发现标签是不是和文章间距很大？不要慌。（只适用于Next.Mist）<br>在<code>themes\next\source\css\_schemes\Mist\_posts-expanded.styl</code>的_posts-expanded.styl中找到代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.post-tags &#123;</span><br><span class="line">  text-align: left;</span><br><span class="line">  a &#123;</span><br><span class="line">    padding: 1px 5px;</span><br><span class="line">    background: $whitesmoke;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  .post-tags &#123;</span><br><span class="line">    text-align: left;</span><br><span class="line">    a &#123;</span><br><span class="line">      padding: 1px 5px;</span><br><span class="line">      background: $whitesmoke;</span><br><span class="line">      border-bottom: none;</span><br><span class="line">    &#125;</span><br><span class="line">    a:hover &#123; background: $grey-light; &#125;</span><br><span class="line">&lt;!-- 下面的意思上方文章的距离为2px，下方的距离为20px --&gt;</span><br><span class="line">	margin-top: 2px;</span><br><span class="line">	margin-bottom: 20px; </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>完成了！！效果参考<a href="/index.html">首页</a></p>
+<hr>
+<h1 id="4-鼠标点击文字效果-颜色、大小会变化"><a href="#4-鼠标点击文字效果-颜色、大小会变化" class="headerlink" title="4.鼠标点击文字效果(颜色、大小会变化)"></a><span id="sbdj">4.鼠标点击文字效果(颜色、大小会变化)</span></h1><p>参考了<a href="https://blog.csdn.net/qq_36759224/article/details/85420403" target="_blank" rel="noopener">Hexo 博客优化之博客美化</a>–TRHX作者的内容，但发现不论是该作者还是网上其他方案都雷同，没有我想要的效果。（我想要的效果是颜色、大小会变化）<br>那我就根据现有代码自行修改了，很简单。</p>
+<p>在 <code>/themes/next/source/src/js</code> 下新建文件 <code>click_show_text.js</code>，在 <code>click_show_text.js</code> 文件中添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">var a_idx = 0,</span><br><span class="line">b_idx = 0;</span><br><span class="line">c_idx = 0;</span><br><span class="line">jQuery(document).ready(function($) &#123;</span><br><span class="line">    $(&quot;body&quot;).click(function(e) &#123;</span><br><span class="line">        var a = new Array(&quot;欢迎您&quot;, &quot;么么哒&quot;, &quot;你真好&quot;, &quot;棒棒哒&quot;, &quot;真可爱&quot;, &quot;好厉害&quot;, &quot;喜欢你&quot;, &quot;真聪明&quot;, &quot;爱你哦&quot;, &quot;太强了&quot;, &quot;祝福你&quot;, &quot;666&quot;),</span><br><span class="line">        b = new Array(&quot;#09ebfc&quot;, &quot;#ff6651&quot;, &quot;#ffb351&quot;, &quot;#51ff65&quot;, &quot;#5197ff&quot;, &quot;#a551ff&quot;, &quot;#ff51f7&quot;, &quot;#ff518e&quot;, &quot;#ff5163&quot;, &quot;#efff51&quot;),</span><br><span class="line">        c = new Array(&quot;12&quot;, &quot;14&quot;, &quot;16&quot;, &quot;18&quot;, &quot;20&quot;, &quot;22&quot;, &quot;24&quot;, &quot;26&quot;, &quot;28&quot;, &quot;30&quot;);</span><br><span class="line">        var $i = $(&quot;&lt;span/&gt;&quot;).text(a[a_idx]);</span><br><span class="line">        a_idx = (a_idx + 1) % a.length;</span><br><span class="line">        b_idx = (b_idx + 1) % b.length;</span><br><span class="line">        c_idx = (c_idx + 1) % c.length;</span><br><span class="line">        var x = e.pageX,</span><br><span class="line">        y = e.pageY;</span><br><span class="line">        $i.css(&#123;</span><br><span class="line">            &quot;z-index&quot;: 5,</span><br><span class="line">            &quot;top&quot;: y - 20,</span><br><span class="line">            &quot;left&quot;: x,</span><br><span class="line">            &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">            &quot;font-weight&quot;: &quot;bold&quot;,</span><br><span class="line">            &quot;font-size&quot;: c[c_idx] + &quot;px&quot;,</span><br><span class="line">            &quot;color&quot;: b[b_idx]</span><br><span class="line">        &#125;);</span><br><span class="line">        $(&quot;body&quot;).append($i);</span><br><span class="line">        $i.animate(&#123;</span><br><span class="line">            &quot;top&quot;: y - 180,</span><br><span class="line">            &quot;opacity&quot;: 0</span><br><span class="line">        &#125;,</span><br><span class="line">			3000,</span><br><span class="line">			function() &#123;</span><br><span class="line">			    $i.remove();</span><br><span class="line">			&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(&apos;delay()&apos;, 2000);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function delay() &#123;</span><br><span class="line">    $(&quot;.buryit&quot;).removeAttr(&quot;onclick&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中的文字、颜色可以根据你自己的创意替换为其他，然后在 <code>themes\next\layout\_layout.swig</code> 文件末尾添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--单击显示文字--&gt;</span><br><span class="line">&#123;% if theme.clickword %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/click_show_text.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>再主题配置文件<code>themes\next\_config.yml</code>的末尾添加配置，方便以后开关效果。</p>
+<pre><code>#点击出现文字
+clickword: true
+</code></pre><hr>
+<h1 id="5-使自定义about页面侧栏不显示文章目录"><a href="#5-使自定义about页面侧栏不显示文章目录" class="headerlink" title="5.使自定义about页面侧栏不显示文章目录"></a><span id="about">5.使自定义about页面侧栏不显示文章目录</span></h1><p><strong>原文:<a href="https://www.jianshu.com/p/ee4344922554" target="_blank" rel="noopener">hexo + next</a> . K丶Aionro [引用日期 4-11]</strong></p>
+<p><strong><big>Step1: 新建about页面</big></strong></p>
+<p>也可以随意建其他名字的，比如我热度排行建的是top页面<a href="https://ahh666.com/top/">https://ahh666.com/top/</a><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/about.PNG" alt></p>
+<p><strong><big>为了使about页面不显示右侧文章目录sidebar，可以使用如下两种方法：</big></strong></p>
+<p><strong>方法一</strong></p>
+<p>页面内不要使用#这种标题的形式</p>
+<p><strong>方法二</strong></p>
+<p>修改代码<br>路径：<code>next/layout/_macro/sidebar.swig</code>文件，找到相应行的代码添加（也可能某些原因在其他行）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//15行 添加and page.type != &apos;about&apos;，如下：</span><br><span class="line">&#123;% if display_toc and toc(page.content).length &gt; 1 and page.type != &apos;about&apos; %&#125;</span><br><span class="line"></span><br><span class="line">//26行 添加or page.type == &apos;about&apos;，如下：</span><br><span class="line">&#123;% if not display_toc or toc(page.content).length &lt;= 1 or page.type == &apos;about&apos; %&#125;</span><br><span class="line"></span><br><span class="line">//127行 添加and page.type != &apos;about&apos;，如下：</span><br><span class="line">&#123;% if display_toc and toc(page.content).length &gt; 1 and page.type != &apos;about&apos; %&#125;</span><br></pre></td></tr></table></figure>
+<p>因此根据上面的内容可以举一反三。把about替换为任意你想要的自建页面。</p>
+<hr>
+<h1 id="6-阅读热度排行"><a href="#6-阅读热度排行" class="headerlink" title="6.阅读热度排行"></a><span id="ydrd">6.阅读热度排行</span></h1><p><strong>原文：<a href="https://hoxis.github.io/hexo-next-read-rank.html" target="_blank" rel="noopener">hexo next 新增阅读排行页面</a> . hoxis [引用日期 4.1]</strong>  </p>
+<p>新增一个阅读排行页面，可以现在本站文章的阅读排行榜，基于 leancloud 的数据实现。</p>
+<p><strong><big>Step1: 新建页面</big></strong></p>
+<p><code>hexo n page top</code>新建页面，会生成 <code>top</code> 目录，编辑其中自动生成的 <code>index.md</code> 文件，将其中的代码替换如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;top&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;AV.initialize(&quot;leancloud_appid&quot;, &quot;leancloud_appkey&quot;);&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var time=0</span><br><span class="line">  var title=&quot;&quot;</span><br><span class="line">  var url=&quot;&quot;</span><br><span class="line">  var query = new AV.Query(&apos;Counter&apos;);</span><br><span class="line">  query.notEqualTo(&apos;id&apos;,0);</span><br><span class="line">  query.descending(&apos;time&apos;);</span><br><span class="line">  query.limit(1000);</span><br><span class="line">  query.find().then(function (todo) &#123;</span><br><span class="line">    for (var i=0;i&lt;1000;i++)&#123;</span><br><span class="line">      var result=todo[i].attributes;</span><br><span class="line">      time=result.time;</span><br><span class="line">      title=result.title;</span><br><span class="line">      url=result.url;</span><br><span class="line">      // var content=&quot;&lt;a href=&apos;&quot;+&quot;https://ahh666.com&quot;+url+&quot;&apos;&gt;&quot;+title+&quot;&lt;/a&gt;&quot;+&quot;&lt;br&gt;&quot;+&quot;&lt;font color=&apos;#fff&apos;&gt;&quot;+&quot;阅读次数：&quot;+time+&quot;&lt;/font&gt;&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;;</span><br><span class="line">      var content=&quot;&lt;p&gt;&quot;+&quot;&lt;font color=&apos;#1C1C1C&apos;&gt;&quot;+&quot;【文章热度:&quot;+time+&quot;℃】&quot;+&quot;&lt;/font&gt;&quot;+&quot;&lt;a href=&apos;&quot;+&quot;https://ahh666.com&quot;+url+&quot;&apos;&gt;&quot;+title+&quot;&lt;/a&gt;&quot;+&quot;&lt;/p&gt;&quot;;</span><br><span class="line">      document.getElementById(&quot;top&quot;).innerHTML+=content</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, function (error) &#123;</span><br><span class="line">    console.log(&quot;error&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>并将其中的 leancloud_appid、leancloud_appkey 和页面链接ahh666.com替换为你的。</strong></p>
+<p><strong><big>Step2: 配置菜单显示</big></strong></p>
+<p>编辑主题配置文件 <code>themes\next\_config.yml</code>，添加 top：</p>
+<pre><code>menu:
+  home: / || home
+  top: /top/ || signal
+</code></pre><p>新增菜单栏的显示名称 <code>hexo/theme/next/languages/zh-Hans.yml</code>，同样新增 top 对应的中文：</p>
+<pre><code>menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  search: 搜索
+  schedule: 日程表
+  sitemap: 站点地图
+  commonweal: 公益404
+  resources: 资源
+  top: 热度排行
+</code></pre><p>最后，<code>hexo d -g</code> 部署后可以显示。</p>
 
       
     </div>
@@ -500,7 +621,7 @@
   <p><span>本文标题:</span><a href="/posts/blog-meihua.html">本博客美化所使用的插件和修改步骤</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
   <p><span>发布时间:</span>2019年04月01日 - 00:06</p>
-  <p><span>最后更新:</span>2019年04月12日 - 01:08</p>
+  <p><span>最后更新:</span>2019年04月12日 - 15:55</p>
   <p><span>原始链接:</span><a href="/posts/blog-meihua.html" title="本博客美化所使用的插件和修改步骤">https://ahh666.com/posts/blog-meihua.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/blog-meihua.html" aria-label="复制成功！"></i></span>
   </p>
@@ -645,8 +766,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -753,6 +883,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-有点忙，以后再说"><span class="nav-number">1.</span> <span class="nav-text">1.有点忙，以后再说</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-首页指定文章隐藏"><span class="nav-number">2.</span> <span class="nav-text">2.首页指定文章隐藏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-首页显示标签"><span class="nav-number">3.</span> <span class="nav-text">3.首页显示标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-鼠标点击文字效果-颜色、大小会变化"><span class="nav-number">4.</span> <span class="nav-text">4.鼠标点击文字效果(颜色、大小会变化)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-使自定义about页面侧栏不显示文章目录"><span class="nav-number">5.</span> <span class="nav-text">5.使自定义about页面侧栏不显示文章目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-阅读热度排行"><span class="nav-number">6.</span> <span class="nav-text">6.阅读热度排行</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -802,7 +948,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11k字</span>
+  <span class="post-count">博客全站共13.6k字</span>
 </div>
 
 

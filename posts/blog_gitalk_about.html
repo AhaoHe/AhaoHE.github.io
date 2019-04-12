@@ -126,7 +126,7 @@
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/post.PNG">
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/page.PNG">
 <meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/about1.PNG">
-<meta property="og:updated_time" content="2019-04-11T20:14:15.321Z">
+<meta property="og:updated_time" content="2019-04-12T05:57:54.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitalk评论系统如何只在文章和指定自建页面内出现">
 <meta name="twitter:description" content="前言 我使用Gitalk评论系统主要原因是我可以查看给我评论的各位Github大佬的仓库，说不准可以学点啥。其次是Gitalk虽然要登录Github，但它的PC端和手机端界面都看着舒服，而且评论数据在自己可控范围，不会随意被ban。    gitalk：一个基于 Github Issue 和 Preact 开发的评论插件官方Demo：https://gitalk.github.io/官方文档说明：">
@@ -488,10 +488,10 @@
 <ol>
 <li>在文章和指定自建页面（<a href="/about/">关于about</a>页面）出现，不在<a href="/tags/">标签tags</a>和<a href="/categories/">分类categories</a>出现评论系统。  </li>
 <li>配置在主题的配置文件_config.yml里直接可以设置，方便未来信息的更改。  </li>
-<li>自动初始化。  <a id="more"></a>
-</li>
+<li>自动初始化。</li>
 </ol>
-<p><strong>但接踵而来的问题是Gitalk设置的效果并不理想。</strong><br>一开始参考了<a href="https://asdfv1929.github.io/" target="_blank" rel="noopener">asdfv1929</a>大佬的设置方法<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">点击查看方法</a>，设置略微麻烦（万一哪天想删掉Gitalk还有点麻烦），设置完后发现效果不是我想象中的那样（<a href="/tags/">标签tags</a>和<a href="/categories/">分类categories</a>，甚至是自建的<a href="/top/">热度排行</a>页面都有Gitalk评论系统）。<span id="ref_[2]"></span><br>接着我参考<a href="https://cr1753343566.github.io/" target="_blank" rel="noopener">cr1753343566</a>大佬直接在post.swing中添加Gitalk代码<a href="https://blog.csdn.net/madridcrls7/article/details/80871596" target="_blank" rel="noopener">点击查看方法</a>。但最后发现只能在文章中出现评论系统，在自建的关于about页面无法实现评论系统（想拿来当留言板），而且没办法自动初始化，这一点官方设置可以解决。其次，一旦想同时在文章和多个自建页面设置，每次想修改，必须打开post.swing找到那一堆代码修改。可视化和可操控性略差。</p>
+<a id="more"></a>
+<p><strong>但接踵而来的问题是Gitalk设置的效果并不理想。</strong><br>一开始参考了<a href="https://asdfv1929.github.io/" target="_blank" rel="noopener">asdfv1929</a>大佬的设置方法<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">点击查看方法</a>，设置略微麻烦（万一哪天想删掉Gitalk还有点麻烦），设置完后发现效果不是我想象中的那样（<a href="/tags/">标签tags</a>和<a href="/categories/">分类categories</a>，甚至是自建的<a href="/top/">热度排行</a>页面都有Gitalk评论系统）。<span id="ref_[2]"></span>  <a href="/posts/blog-meihua.html#ydrd">【点击查看如何建热度排行页面】</a><br>接着我参考<a href="https://cr1753343566.github.io/" target="_blank" rel="noopener">cr1753343566</a>大佬直接在post.swing中添加Gitalk代码<a href="https://blog.csdn.net/madridcrls7/article/details/80871596" target="_blank" rel="noopener">点击查看方法</a>。但最后发现只能在文章中出现评论系统，在自建的关于about页面无法实现评论系统（想拿来当留言板），而且没办法自动初始化，这一点官方设置可以解决。其次，一旦想同时在文章和多个自建页面设置，每次想修改，必须打开post.swing找到那一堆代码修改。可视化和可操控性略差。</p>
 <p><strong>于是我决定结合<a href="https://cr1753343566.github.io/" target="_blank" rel="noopener">cr1753343566</a>大佬的简便操作和<a href="https://asdfv1929.github.io/" target="_blank" rel="noopener">asdfv1929</a>大佬的可操作性。再加上自己的研究来完成我理想的效果。</strong><br>（其实asdfv1929的方法不麻烦，只是需要在各个不同文件夹操作，对于我来说有点眼花缭乱😝丢人了）<br>Σ(っ °Д °;)っ</p>
 <h1 id="第一步：新建一个OAuth-Application"><a href="#第一步：新建一个OAuth-Application" class="headerlink" title="第一步：新建一个OAuth Application"></a>第一步：新建一个OAuth Application</h1><p>在GitHub上注册新应用，链接：<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/app.png" alt="oauth"><br>点击注册后，页面跳转如下，其中<code>Client ID</code>和<code>Client Secret</code>在后面的配置中需要用到，到时复制粘贴即可：<span id="ref_[1]"><sup><a href="#参考1"><font size="1">[1]</font></a></sup></span><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/p25Ubj.md.png" alt="oauth"></p>
 <p>不小心关掉页面，找不到<code>Client ID</code>的话，可以参考下面步骤找到：<br>或者打开<a href="https://github.com/settings/developers" target="_blank" rel="noopener">https://github.com/settings/developers</a><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/app3.jpg" alt="oauth"><br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/gitalk/app4.PNG" alt="oauth"></p>
@@ -570,7 +570,7 @@ gitalk:
   <p><span>本文标题:</span><a href="/posts/blog_gitalk_about.html">Gitalk评论系统如何只在文章和指定自建页面内出现</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
   <p><span>发布时间:</span>2019年04月12日 - 00:13</p>
-  <p><span>最后更新:</span>2019年04月12日 - 04:14</p>
+  <p><span>最后更新:</span>2019年04月12日 - 13:57</p>
   <p><span>原始链接:</span><a href="/posts/blog_gitalk_about.html" title="Gitalk评论系统如何只在文章和指定自建页面内出现">https://ahh666.com/posts/blog_gitalk_about.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/blog_gitalk_about.html" aria-label="复制成功！"></i></span>
   </p>
@@ -893,7 +893,7 @@ gitalk:
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11k字</span>
+  <span class="post-count">博客全站共13.6k字</span>
 </div>
 
 

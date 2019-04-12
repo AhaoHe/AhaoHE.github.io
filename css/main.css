@@ -1991,7 +1991,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e73ddf;
+  background: #6c6f7f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3112,7 +3112,7 @@ hr {
 }
 .posts-expand .post-tags {
   text-align: left;
-  margin-top: 0px;
+  margin-top: 2px;
   margin-bottom: 20px;
 }
 .posts-expand .post-tags a {
