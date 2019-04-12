@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="温故而知新">
 <meta property="og:description" content="本篇主要记录我建博客遇到的问题，防止自己重复走弯路。建博客的具体步骤可以参考GitHub+Hexo搭建自己的Blog–rosesnow的文章。写的很好，从0到1，基本上是手把手教了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T05:37:33.165Z">
+<meta property="og:updated_time" content="2019-04-12T16:13:21.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建时遇到的一些问题和解决方案">
 <meta name="twitter:description" content="本篇主要记录我建博客遇到的问题，防止自己重复走弯路。建博客的具体步骤可以参考GitHub+Hexo搭建自己的Blog–rosesnow的文章。写的很好，从0到1，基本上是手把手教了。">
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  63
+                  671
                 </span>
 				<span>字</span>
               
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
 				<span>分钟</span>
               
@@ -475,6 +475,44 @@
 <p>本篇主要记录我建博客遇到的问题，防止自己重复走弯路。<br>建博客的具体步骤可以参考<a href="http://rosesnow.top/2018/12/13/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%971/" target="_blank" rel="noopener">GitHub+Hexo搭建自己的Blog</a>–rosesnow的文章。写的很好，从0到1，基本上是手把手教了。</p>
 </blockquote>
 <a id="more"></a>
+<h1 id="运行：hexo-init-后报错"><a href="#运行：hexo-init-后报错" class="headerlink" title="运行：hexo init 后报错"></a>运行：hexo init 后报错</h1><p>运行：hexo init 后报错/<strong> 创建一个Hexo的新框架 </strong>/<br>返回:</p>
+<pre><code>WARN git clone failed. Copying data instead
+WARN Failed to install dependencies. Please run &apos;npm install&apos; manually!
+</code></pre><p>安装hexo应该执行<code>npm install -g hexo-cli</code></p>
+<h1 id="npm-install卡住，速度慢"><a href="#npm-install卡住，速度慢" class="headerlink" title="npm install卡住，速度慢"></a>npm install卡住，速度慢</h1><p>可以使用淘宝 NPM 镜像定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<p>这样就可以使用 cnpm 命令来安装模块了：</p>
+<p><code>cnpm install 命令</code></p>
+<p>所有npm指令都要用cnpm代替</p>
+<h1 id="执行hexo-s命令后，页面访问显示Cannot-GET"><a href="#执行hexo-s命令后，页面访问显示Cannot-GET" class="headerlink" title="执行hexo s命令后，页面访问显示Cannot GET/"></a>执行hexo s命令后，页面访问显示Cannot GET/</h1><p>没安装模块。init之后在执行以下npm install</p>
+<h1 id="git-部署插件-后-hexo-g报错"><a href="#git-部署插件-后-hexo-g报错" class="headerlink" title="git 部署插件 后 hexo g报错"></a>git 部署插件 后 hexo g报错</h1><p>报错信息：</p>
+<pre><code>FATAL bad indentation of a mapping entry at line 81, column 7:
+      repo: git@github.com:AhaoHe/AhaoHe.g ...
+</code></pre><p>本地myblog文件夹下的 _config.yml文件进行配置时<code>:</code>后要加空格</p>
+<h1 id="hexo-d后回车确认无效"><a href="#hexo-d后回车确认无效" class="headerlink" title="hexo d后回车确认无效"></a>hexo d后回车确认无效</h1><p>这是一个坑。很坑</p>
+<p>当出现这个：</p>
+<pre><code>The authenticity of host &apos;github.com (13.250.177.223)&apos; can&apos;t be established.
+Are you sure you want to continue connecting (yes/no)? 
+</code></pre><p>此时不能回车，要输入yes。</p>
+<h1 id="若执行命令hexo-deploy报错"><a href="#若执行命令hexo-deploy报错" class="headerlink" title="若执行命令hexo deploy报错"></a>若执行命令hexo deploy报错</h1><p>若执行命令hexo deploy报错：无法连接git或找不到git，则执行如下命令来安装hexo-deployer-git：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<p> $ npm install hexo-deployer-git –save</p>
+<h1 id="ERROR-Local-hexo-not-found-in-X-xxx"><a href="#ERROR-Local-hexo-not-found-in-X-xxx" class="headerlink" title="ERROR Local hexo not found in X:\xxx"></a>ERROR Local hexo not found in X:\xxx</h1><p>报错：</p>
+<pre><code>ERROR Local hexo not found in D:\blog
+ERROR Try running: &apos;npm install hexo --save&apos;
+</code></pre><p>原因：.gitignore文件里面忽略了node_modules文件夹，所以这个文件夹没有更新上去。所以用npm重新安装即可。</p>
+<p>网上说要用cmd，然后cd到blog目录，执行<code>npm install</code><br>但网上的方法没用，我是这么做解决的：  </p>
+<ol>
+<li>删除node_modules文件夹  </li>
+<li>执行npm install/cnpm install</li>
+</ol>
+<h1 id="server-命令找不到"><a href="#server-命令找不到" class="headerlink" title="server 命令找不到"></a>server 命令找不到</h1><p>参考hexo官方文档：<a href="https://hexo.io/zh-cn/docs/server.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/server.html</a></p>
+<p>执行<code>npm install hexo-server --save</code></p>
+<p>之后就可以 <code>hexo server</code> 了</p>
+<h1 id="现在来介绍常用的Hexo命令"><a href="#现在来介绍常用的Hexo命令" class="headerlink" title="现在来介绍常用的Hexo命令"></a>现在来介绍常用的Hexo命令</h1><p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客  </p>
+<p><strong>命令简写</strong></p>
+<p>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署  </p>
+<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p>
 
       
     </div>
@@ -503,7 +541,7 @@
   <p><span>本文标题:</span><a href="/posts/hexo-problem.html">Hexo博客搭建时遇到的一些问题和解决方案</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
   <p><span>发布时间:</span>2019年03月30日 - 02:48</p>
-  <p><span>最后更新:</span>2019年04月12日 - 13:37</p>
+  <p><span>最后更新:</span>2019年04月13日 - 00:13</p>
   <p><span>原始链接:</span><a href="/posts/hexo-problem.html" title="Hexo博客搭建时遇到的一些问题和解决方案">https://ahh666.com/posts/hexo-problem.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/hexo-problem.html" aria-label="复制成功！"></i></span>
   </p>
@@ -650,8 +688,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -764,6 +811,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行：hexo-init-后报错"><span class="nav-number">1.</span> <span class="nav-text">运行：hexo init 后报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-install卡住，速度慢"><span class="nav-number">2.</span> <span class="nav-text">npm install卡住，速度慢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-s命令后，页面访问显示Cannot-GET"><span class="nav-number">3.</span> <span class="nav-text">执行hexo s命令后，页面访问显示Cannot GET/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-部署插件-后-hexo-g报错"><span class="nav-number">4.</span> <span class="nav-text">git 部署插件 后 hexo g报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-d后回车确认无效"><span class="nav-number">5.</span> <span class="nav-text">hexo d后回车确认无效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#若执行命令hexo-deploy报错"><span class="nav-number">6.</span> <span class="nav-text">若执行命令hexo deploy报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ERROR-Local-hexo-not-found-in-X-xxx"><span class="nav-number">7.</span> <span class="nav-text">ERROR Local hexo not found in X:\xxx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#server-命令找不到"><span class="nav-number">8.</span> <span class="nav-text">server 命令找不到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#现在来介绍常用的Hexo命令"><span class="nav-number">9.</span> <span class="nav-text">现在来介绍常用的Hexo命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -813,7 +876,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共13.7k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 
 
