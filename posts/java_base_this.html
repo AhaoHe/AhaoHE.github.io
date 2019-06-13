@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="Blog, Java, HTML, MySQL, Python, Git">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -110,17 +110,23 @@
 
 
 
-<meta name="description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="温故而知新">
-<meta property="og:url" content="https://ahh666.com/h5/mota/README.html">
+<meta name="description" content="注：这篇文章通俗易懂，我就转载过来，方便复习。 一个官方的说法是，this首先是一个对象,它代表调用这个函数的对象。 根据面向对象的基本语法,每当调用变量或者函数的时候,都要按照类名.变量(函数)的格式来调用,意即每个变量或函数都必须属于某一个实际的对象而不是一个类(static的除外).">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转]Java里this的作用和用法">
+<meta property="og:url" content="https://ahh666.com/posts/java_base_this.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
+<meta property="og:description" content="注：这篇文章通俗易懂，我就转载过来，方便复习。 一个官方的说法是，this首先是一个对象,它代表调用这个函数的对象。 根据面向对象的基本语法,每当调用变量或者函数的时候,都要按照类名.变量(函数)的格式来调用,意即每个变量或函数都必须属于某一个实际的对象而不是一个类(static的除外).">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-06-18T01:18:59.000Z">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/062222157681430.jpg">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/062230488469847.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/110252379422448.png">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/110255042072997.png">
+<meta property="og:updated_time" content="2019-06-13T03:18:55.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="温故而知新">
-<meta name="twitter:description" content="#Mota����˵������Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧�� �򿪷�ʽ����">
+<meta name="twitter:title" content="[转]Java里this的作用和用法">
+<meta name="twitter:description" content="注：这篇文章通俗易懂，我就转载过来，方便复习。 一个官方的说法是，this首先是一个对象,它代表调用这个函数的对象。 根据面向对象的基本语法,每当调用变量或者函数的时候,都要按照类名.变量(函数)的格式来调用,意即每个变量或函数都必须属于某一个实际的对象而不是一个类(static的除外).">
+<meta name="twitter:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/062222157681430.jpg">
 
 
 
@@ -150,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="https://ahh666.com/h5/mota/README.html">
+  <link rel="canonical" href="https://ahh666.com/posts/java_base_this.html">
 
 
 
 
 
-  <title> | 温故而知新</title>
+  <title>[转]Java里this的作用和用法 | 温故而知新</title>
   
 
 
@@ -322,38 +328,305 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ahh666.com/posts/java_base_this.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿豪">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温故而知新">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>#Mota<br>����˵����<br>��Ԫħ��ǰ����һ����HTML5(Canvas + ԭ��JavaScript)������С��Ϸ�������زľ�����ԭ���Ԫ��ħ��(ħ��50��)<br>�����Ϸʱ��ƽ̨�ģ��κ�֧��HTML5���������������������Ŀǰ�����ƶ��豸���ڵĶ����豸����װ�������������֧��</p>
-<p>�򿪷�ʽ��<br>���ڷ�������ʱ�������豸����ֱ��ͨ����ַ����<br>���Ա��ؿ��Ϸ�index.html����������л��Ҽ�ѡ���������<br>�ֻ����ؿ��ҵ�index.html������·��Ȼ������������ʸñ����ļ�����</p>
-<p>������˵����<br>IE�������֧�ֻ�֧��Ч������<br>�ٶ��ֻ���������ֻ��Դ��Ĳ��������֧�ֲ���<br>���Խ�����Chrome����Firefox�������<br>�ֻ� Android������UC��Chrome������򿪣�IOS������Safari��Chrome��<br>*��ʿ�߶�������NPC�Ի�������Ϊ�����ԽϺ�</p>
-<p>�ļ�˵����<br>��Դ�ļ�����Res�ļ�����<br>Core.js�Ǻ����ļ�������������Դ�ļ��غ���Ϸ�����п���<br>Layout.css�ǿ��Ʋ��ֵ���ʽ���ļ�<br>Res�ļ����е�js�ļ���������Դ��һ���֣��������˵�ͼ���ݣ��������ݵ�</p>
-<p>��������쳣��ˢ������</p>
-
+          <h1 class="post-title" itemprop="name headline">[转]Java里this的作用和用法</h1>
         
-      </div>
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T10:38:00+08:00">
+                2019-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/posts/java_base_this.html" class="leancloud_visitors" data-flag-title="[转]Java里this的作用和用法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				<span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  786
+                </span>
+				<span>字</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+				<span>分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>注：这篇文章通俗易懂，我就转载过来，方便复习。</p>
+<p>一个官方的说法是，this首先是一个对象,它代表<span style="color: #ff0000; font-family: 'Microsoft YaHei';">调用这个函数的对象</span>。</p>
+<p><span style="color: #ff0000;">根据面向对象的基本语法,每当调用变量或者函数的时候,都要按照类名.变量(函数)的格式来调用,意即每个变量或函数都必须属于某一个实际的对象而不是一个类(static的除外).</span></p>
+<a id="more"></a>
+<p>​    在不会产生混淆的地方, this是可以省略的,但一般都会加上,(<span style="color: #ff0000;">Think in Java里面说最好不要加,因为大家都不加</span>)<br>例如，下面的程序中,类”Person”里面加与不加 this 编译运行后的结果是一样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package testThis;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Person p1 = new Person();</span><br><span class="line">        p1.name = &quot;zhangsan&quot;;</span><br><span class="line">        Person p2 = new Person();</span><br><span class="line">        p2.name = &quot;lisi&quot;;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        p1.talk();</span><br><span class="line">        p2.talk();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Person&#123;</span><br><span class="line">    String name;</span><br><span class="line">    void talk()&#123;</span><br><span class="line">        System.out.println(&quot;My name is &quot; + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码里第18行,不管是”this.name”还是”name”,运行的结果都是:</p>
+<p>My name is zhangsan<br>My name is lisi</p>
+<p> 因为前面已经把p1和p2里面的name变量赋值,所以执行方法的时候,都会打印出它们各自的数据.</p>
+<p>但是,当函数里面有参数时,如果函数的参数和成员变量一样,这时不加this的话,程序就会根据”<strong>就近原则</strong>“,自动调用最近的值,如下面的代码:<br><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/062222157681430.jpg" alt="img"><br>上面已经把对象p1和p2里面的变量name分别赋值为”zhangsan”和”lisi”,但类”Person”里面的方法”talk”现在有了参数”String   name”,而且没有加”this”,这时如果运行这个方法,方法就会接收后面参数传送给它的值,分别是”zhang”和”li”,这时运行结果就会是:</p>
+<p>My name is zhang<br>My name is li</p>
+<p>所以,这里虽然对象p1和p2各有自己的变量 name,但它们调用的方法接收的却是参数里面的值,(<strong>从系统里各变量的颜色背景也可心看出对应的变量</strong>),而不是它们自己本身的值.所以这里输出的结果跟它们自己内部的值无关.</p>
+<p>如果想要在它们各自调用talk()方法时分别输出自己内部的值,则需要在类 “Person”里面的方法”talk”里加上”this”,这样,当它们各自调用这个方法时,输出的结果都是它们各自内部变量的值了:</p>
+<p> <img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/062230488469847.png" alt="img"></p>
+<p>上面介绍的是用this来调用本身对象的变量和函数,this还有一个重要的作用就是用来调用构造函数.可以用来精简代码.比如下例,如果我们的类里面有多个构造函数,分别给不同的变量赋值,就可能会产生重复代码,为了解决这些重复代码,就可以用this(变量)的方式,来调用另一个构造函数,来给变量赋值.</p>
+<p> <img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/110252379422448.png" alt="img"><br> <img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/java/this/110255042072997.png" alt="img"></p>
+<p>如果大家有看到我写的不完善的地方还希望不吝赐教啊</p>
+<p>转载处:<a href="https://www.cnblogs.com/livterjava/p/4709383.html" target="_blank" rel="noopener">https://www.cnblogs.com/livterjava/p/4709383.html</a></p>
+
       
     </div>
     
     
     
+	<div>
+  		
+    	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+  		
+	</div>
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/posts/java_base_this.html">[转]Java里this的作用和用法</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
+  <p><span>发布时间:</span>2019年06月13日 - 10:38</p>
+  <p><span>最后更新:</span>2019年06月13日 - 11:18</p>
+  <p><span>原始链接:</span><a href="/posts/java_base_this.html" title="[转]Java里this的作用和用法">https://ahh666.com/posts/java_base_this.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/java_base_this.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/idea-how-to-import-maven-project.html" rel="next" title="IDEA如何导入Maven项目（Java Web）">
+                <i class="fa fa-chevron-left"></i> IDEA如何导入Maven项目（Java Web）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+	<div>
+  		
+    	<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '7398bf08ebe06319f2b8',
+        clientSecret: '8192ee342b5908a057f748706031e0cf727ef13f',
+        repo: 'AhaoHe.github.io',
+        owner: 'AhaoHe',
+        admin: ['AhaoHe'],
+        id: location.pathname,
+		distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->
+
+  		
+	</div>
+
+
+
+    <div class="post-spread">
+      
+        
+
+
+
+
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"93"},"image":{"viewList":["qzone","tsina","weixin","tieba","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tieba","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+
+
+      
+    </div>
   </div>
 
 
