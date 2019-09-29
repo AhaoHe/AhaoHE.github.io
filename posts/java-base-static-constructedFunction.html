@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="Blog, Java, HTML, MySQL, Python, Git">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -110,16 +110,20 @@
 
 
 
-<meta name="description" content="如果知识不是每天在增加，就会不断地减少。开源是伟大的，限制知识的传播是一种罪过。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="温故而知新">
-<meta property="og:url" content="https://ahh666.com/tags/IDEA/index.html">
+<meta name="description" content="static，构造函数，构造函数块。三个的内容到底谁先执行呢？">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="static，构造函数，构造函数块">
+<meta property="og:url" content="https://ahh666.com/posts/java-base-static-constructedFunction.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="如果知识不是每天在增加，就会不断地减少。开源是伟大的，限制知识的传播是一种罪过。">
+<meta property="og:description" content="static，构造函数，构造函数块。三个的内容到底谁先执行呢？">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/static%2Cconstructedfunction/1569770562645.png">
+<meta property="og:updated_time" content="2019-09-29T15:31:49.470Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="温故而知新">
-<meta name="twitter:description" content="如果知识不是每天在增加，就会不断地减少。开源是伟大的，限制知识的传播是一种罪过。">
+<meta name="twitter:title" content="static，构造函数，构造函数块">
+<meta name="twitter:description" content="static，构造函数，构造函数块。三个的内容到底谁先执行呢？">
+<meta name="twitter:image" content="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/static%2Cconstructedfunction/1569770562645.png">
 
 
 
@@ -149,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="https://ahh666.com/tags/IDEA/">
+  <link rel="canonical" href="https://ahh666.com/posts/java-base-static-constructedFunction.html">
 
 
 
 
 
-  <title>标签: IDEA | 温故而知新</title>
+  <title>static，构造函数，构造函数块 | 温故而知新</title>
   
 
 
@@ -174,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -319,52 +323,310 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>IDEA<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ahh666.com/posts/java-base-static-constructedFunction.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿豪">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温故而知新">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/idea-how-to-import-maven-project.html" itemprop="url">
-              
-                <span itemprop="name">IDEA如何导入Maven项目（Java Web）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">static，构造函数，构造函数块</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-07T02:08:50+08:00" content="2019-05-07">
-          05-07
-        </time>
-      </div>
+        <div class="post-meta">
+          
 
-    </header>
-  </article>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T10:00:00+08:00">
+                2019-09-29
+              </time>
+            
 
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/posts/java-base-static-constructedFunction.html" class="leancloud_visitors" data-flag-title="static，构造函数，构造函数块">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				<span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  452
+                </span>
+				<span>字</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+				<span>分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>static，构造函数，构造函数块。三个的内容到底谁先执行呢？</p>
+<a id="more"></a>
+<p>我们采用2个类的例子来解释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	A()&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数 A"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数块 A"</span>);<span class="comment">//创建对象后，优先于构造函数执行</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">"static A"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数 B"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造函数块 B"</span>); <span class="comment">//创建对象后，优先于构造函数执行</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">"static B"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">new</span> B(); <span class="comment">//匿名函数对象</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>先给结论：1、static静态方法先输出  – 2、之后构造函数块  –  3、最后构造函数</strong></p>
+<p><img src="https://ahaohe-1258928898.cos.ap-chengdu.myqcloud.com/blog/static%2Cconstructedfunction/1569770562645.png" alt></p>
+<p>构造代码块具体作用：</p>
+<p>  1：给对象进行初始化。对象一建立就运行并且优先于构造函数。</p>
+<p>  2：与构造函数区别</p>
+<p>​    1：构造代码块和构造函数的区别，构造代码块是给所有对象进行统一初始化， 构造函数给对应的对象初始化。</p>
+<p>​    2：构造代码块的作用：它的作用就是将所有构造方法中公共的信息进行抽取。</p>
+<p><strong>构造函数块因为优先于构造函数，可以给对象进行统一初始化</strong></p>
+<p>当主函数代码改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		//不创建任何对象</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">static A</span><br><span class="line">static B</span><br></pre></td></tr></table></figure>
+<p>因为静态函数，静态变量，常量等都存于JVM虚拟机的方法区。在程序运行的时候就存在，所以静态static修饰词的使用要小心。</p>
+<p>其他：</p>
+<p>当一个子类继承父类的时候，会继承父类的所有方法，包括构造函数，因此也会输出父类的构造函数块和构造函数。</p>
 
       
     </div>
+    
+    
+    
+	<div>
+  		
+    	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+  		
+	</div>
 
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/posts/java-base-static-constructedFunction.html">static，构造函数，构造函数块</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 阿豪 的个人博客">阿豪</a></p>
+  <p><span>发布时间:</span>2019年09月29日 - 10:00</p>
+  <p><span>最后更新:</span>2019年09月29日 - 23:31</p>
+  <p><span>原始链接:</span><a href="/posts/java-base-static-constructedFunction.html" title="static，构造函数，构造函数块">https://ahh666.com/posts/java-base-static-constructedFunction.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ahh666.com/posts/java-base-static-constructedFunction.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/java_base_this.html" rel="next" title="[转]Java里this的作用和用法">
+                <i class="fa fa-chevron-left"></i> [转]Java里this的作用和用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+	<div>
+  		
+    	<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '7398bf08ebe06319f2b8',
+        clientSecret: '8192ee342b5908a057f748706031e0cf727ef13f',
+        repo: 'AhaoHe.github.io',
+        owner: 'AhaoHe',
+        admin: ['AhaoHe'],
+        id: location.pathname,
+		distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->
+
+  		
+	</div>
+
+
+
+    <div class="post-spread">
+      
+        
+
+
+
+
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"left","bdTop":"93"},"image":{"viewList":["qzone","tsina","weixin","tieba","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tieba","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -372,6 +634,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -662,6 +928,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
